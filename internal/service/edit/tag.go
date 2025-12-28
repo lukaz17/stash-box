@@ -203,7 +203,7 @@ func (m *TagEditProcessor) apply() error {
 
 	switch operation {
 	case models.OperationEnumCreate:
-		UUID, err := uuid.NewV7()
+		UUID, err := uuid.NewV4()
 		if err != nil {
 			return err
 		}

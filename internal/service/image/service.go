@@ -43,7 +43,7 @@ func (s *Image) Create(ctx context.Context, input models.ImageCreateInput) (*mod
 
 	// Generate uuid that does not start with AD to prevent adblock issues
 	for strings.HasPrefix(UUID.String(), "ad") {
-		UUID, err = uuid.NewV7()
+		UUID, err = uuid.NewV4()
 		if err != nil {
 			return nil, err
 		}
