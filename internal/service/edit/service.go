@@ -1015,7 +1015,7 @@ func (s *Edit) ApplyEdit(ctx context.Context, editID uuid.UUID, immediate bool) 
 	if err != nil {
 		// Failed apply, so we create a comment with error details
 		success = false
-		commentID, _ := uuid.NewV7()
+		commentID, _ := uuid.NewV4()
 		text := "###### Edit application failed: ######\n"
 		if prereqErr := (*validator.ErrEditPrerequisiteFailed)(nil); errors.As(err, &prereqErr) {
 			text = fmt.Sprintf("%sPrerequisite failed: %v", text, err)
