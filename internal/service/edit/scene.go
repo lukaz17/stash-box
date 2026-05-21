@@ -378,7 +378,7 @@ func (m *SceneEditProcessor) applyEdit(scene *models.Scene) error {
 func (m *SceneEditProcessor) applyCreate(data *models.SceneEditData, userID *uuid.UUID) error {
 	UUID := data.New.DraftID
 	if UUID == nil {
-		newUUID, err := uuid.NewV7()
+		newUUID, err := uuid.NewV4()
 		if err != nil {
 			return err
 		}
