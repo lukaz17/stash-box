@@ -377,7 +377,7 @@ func UpdateSiteFromUpdateInput(site *models.Site, input models.SiteUpdateInput) 
 
 // StudioCreateInputToCreateParams converts a models.StudioCreateInput to a queries.CreateStudioParams
 func StudioCreateInputToCreateParams(input models.StudioCreateInput) (queries.CreateStudioParams, error) {
-	id, err := uuid.NewV7()
+	id, err := uuid.NewV4()
 	if err != nil {
 		return queries.CreateStudioParams{}, err
 	}
@@ -417,7 +417,7 @@ func UpdateStudioFromUpdateInput(studio queries.Studio, input models.StudioUpdat
 
 // TagCategoryCreateInputToCreateParams converts a models.TagCategoryCreateInput to a queries.CreateTagCategoryParams
 func TagCategoryCreateInputToCreateParams(input models.TagCategoryCreateInput) (queries.CreateTagCategoryParams, error) {
-	id, err := uuid.NewV7()
+	id, err := uuid.NewV4()
 	if err != nil {
 		return queries.CreateTagCategoryParams{}, err
 	}
@@ -458,7 +458,7 @@ func UpdateTagCategoryFromUpdateInput(tagCategory queries.TagCategory, input mod
 
 // TagCreateInputToCreateParams converts a models.TagCreateInput to a queries.CreateTagParams
 func TagCreateInputToCreateParams(input models.TagCreateInput) (queries.CreateTagParams, error) {
-	id, err := uuid.NewV7()
+	id, err := uuid.NewV4()
 	if err != nil {
 		return queries.CreateTagParams{}, err
 	}
@@ -585,7 +585,7 @@ func DraftToModelPtr(d queries.Draft) *models.Draft {
 
 // CreateEditCommentParams creates a queries.CreateEditCommentParams from editID, userID, and comment text
 func CreateEditCommentParams(editID, userID uuid.UUID, commentText string) (queries.CreateEditCommentParams, error) {
-	id, err := uuid.NewV7()
+	id, err := uuid.NewV4()
 	if err != nil {
 		return queries.CreateEditCommentParams{}, err
 	}
