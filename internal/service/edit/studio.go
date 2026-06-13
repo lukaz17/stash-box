@@ -226,7 +226,7 @@ func (m *StudioEditProcessor) apply() error {
 
 	switch operation {
 	case models.OperationEnumCreate:
-		studioID, err := uuid.NewV7()
+		studioID, err := uuid.NewV4()
 		if err != nil {
 			return err
 		}

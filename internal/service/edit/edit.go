@@ -64,7 +64,7 @@ func (m *mutator) CreateComment(userID uuid.UUID, comment *string) error {
 		if err != nil {
 			return err
 		}
-		commentID, _ := uuid.NewV7()
+		commentID, _ := uuid.NewV4()
 		comment := models.NewEditComment(commentID, userID, m.edit, text)
 		_, err = m.queries.CreateEditComment(m.context, converter.EditCommentToCreateParams(*comment))
 		return err

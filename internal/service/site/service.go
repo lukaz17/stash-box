@@ -32,7 +32,7 @@ func (s *Site) WithTxn(fn func(*queries.Queries) error) error {
 
 // Create creates a new site
 func (s *Site) Create(ctx context.Context, input models.SiteCreateInput) (*models.Site, error) {
-	id, err := uuid.NewV7()
+	id, err := uuid.NewV4()
 	if err != nil {
 		return nil, err
 	}
